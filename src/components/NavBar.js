@@ -3,9 +3,11 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import "../App.css";
 import "../styles/NavBar.css";
-// import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import navIcon1 from "../assets/img/icons8-linkedin.svg";
+import navIcon2 from "../assets/img/icons8-gmail.svg";
+import navIcon3 from "../assets/img/icons8-github.svg";
 
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
@@ -39,7 +41,7 @@ const NavBar = () => {
               }
               onClick={() => onUpdateActiveLink("skills")}
             >
-              skills
+              Compétences
             </NavLink>
             <NavLink
               to="/projects"
@@ -50,9 +52,33 @@ const NavBar = () => {
               }
               onClick={() => onUpdateActiveLink("projects")}
             >
-              Projects
+              Projets
             </NavLink>
           </Nav>
+
+          <div className="social-icon">
+            <a
+              href="https://www.linkedin.com/in/bsissoko90/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={navIcon1} alt="linkedin logo" />
+            </a>
+            <a
+              href="mailto:bs.sissoko90@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={navIcon2} alt=" gmail logo" />
+            </a>
+            <a
+              href="https://github.com/bosissok/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={navIcon3} alt=" github logo" />
+            </a>
+          </div>
         </Navbar.Collapse>
       </Navbar>
     </>

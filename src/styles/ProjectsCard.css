@@ -1,0 +1,5 @@
+.listing_row {
+    margin: 6px 0px;
+    display: flex;
+    align-items: center;
+}
