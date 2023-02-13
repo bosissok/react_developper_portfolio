@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import "../App.css";
+// import { useState } from "react";
 import "../styles/NavBar.css";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -10,47 +9,47 @@ import navIcon2 from "../assets/img/icons8-gmail.svg";
 import navIcon3 from "../assets/img/icons8-github.svg";
 
 const NavBar = () => {
-  const [activeLink, setActiveLink] = useState("home");
+  // const [activeLink, setActiveLink] = useState("home");
 
-  const onUpdateActiveLink = (value) => {
-    setActiveLink(value);
-  };
+  // const onUpdateActiveLink = (value) => {
+  //   setActiveLink(value);
+  // };
   return (
     <>
       <Navbar expand="lg" bg="dark" variant="dark">
         <Navbar.Collapse className="nav-pills" id="basic-navbar-nav">
-          {/* <Nav className="me-auto"> */}
-          <Nav className="m-auto">
+          <Nav className="ms-auto">
+            {/* <Nav className="m-auto"> */}
             <NavLink
               to="/home"
-              className={
-                activeLink === "home"
+              className={({ isActive }) =>
+                isActive
                   ? "active navbar-link nav-link"
                   : "navbar-link nav-link"
               }
-              onClick={() => onUpdateActiveLink("home")}
+              // onClick={() => onUpdateActiveLink("home")}
             >
               Accueil
             </NavLink>
             <NavLink
               to="/skills"
-              className={
-                activeLink === "skills"
+              className={({ isActive }) =>
+                isActive
                   ? "active navbar-link nav-link"
                   : "navbar-link nav-link"
               }
-              onClick={() => onUpdateActiveLink("skills")}
+              // onClick={() => onUpdateActiveLink("skills")}
             >
               Compétences
             </NavLink>
             <NavLink
               to="/projects"
-              className={
-                activeLink === "projects"
+              className={({ isActive }) =>
+                isActive
                   ? "active navbar-link nav-link"
                   : "navbar-link nav-link"
               }
-              onClick={() => onUpdateActiveLink("projects")}
+              // onClick={() => onUpdateActiveLink("projects")}
             >
               Projets
             </NavLink>

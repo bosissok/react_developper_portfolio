@@ -5,6 +5,7 @@ import TrackVisibility from "react-on-screen";
 import { useState } from "react";
 import Overlay from "./Overlay";
 import Modal from "./Modal";
+import "../styles/Projects.css";
 
 const Projects = () => {
   const [openModals, setOpenModals] = useState(
@@ -95,22 +96,16 @@ const Projects = () => {
                           })}
                         </Row>
                       </Tab.Pane>
-                      <Tab.Pane eventKey="section">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
-                        </p>
+                      <Tab.Pane eventKey="second">
+                        <p>Projets NodejS</p>
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
                         <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
+                          Projet Html ET CSS Lorem ipsum dolor sit amet
+                          consectetur adipisicing elit. Cumque quam, quod neque
+                          provident velit, rem explicabo excepturi id illo
+                          molestiae blanditiis, eligendi dicta officiis
+                          asperiores delectus quasi inventore debitis quo.
                         </p>
                       </Tab.Pane>
                     </Tab.Content>

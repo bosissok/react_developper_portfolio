@@ -1,7 +1,7 @@
 /************ Navbar Css ************/
 nav.navbar {
     /* padding: 18px 0; */
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     top: 0;
     z-index: 9999;
@@ -22,9 +22,12 @@ nav.navbar {
     font-size: 18px;
     opacity: 0.75;
   }
-  nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
-  nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+  nav.navbar .navbar-nav a.nav-link.navbar-link:hover {
       opacity: 1;
+  }
+  nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+    opacity: 1;
+    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   } 
   span.navbar-text {
       display: flex;
@@ -35,9 +38,9 @@ nav.navbar {
       margin-left: 14px;
   }
   .social-icon a {
+      background-color: rgb(255 255 255) !important;
       width: 42px;
       height: 42px;
-      background: rgba(217, 217, 217, 0.1);
       display: inline-flex;
       border-radius: 50%;
       margin-right: 6px;
@@ -51,12 +54,13 @@ nav.navbar {
       width: 42px;
       height: 42px;
       position: absolute;
-      background-color: #ffffff;
+      background-color: #ffffff !important;
       border-radius: 50%;
       transform: scale(0);
       transition: 0.3s ease-in-out;
   }
   .social-icon a:hover::before {
+        background-color: #fff !important;
       transform: scale(1);
   }
   .social-icon a img {
