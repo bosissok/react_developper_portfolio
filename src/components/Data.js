@@ -75,6 +75,7 @@ export const projects = [
     imgUrl: projImg1,
     icon: <FaNodeJs />,
     icon2: <FaSass />,
+    category: "nodeJs",
   },
   {
     title: "Projet Pays",
@@ -83,6 +84,7 @@ export const projects = [
     imgUrl: projImg2,
     icon: <FaReact />,
     icon2: <FaSass />,
+    category: "react",
   },
   {
     title: "React movies",
@@ -91,11 +93,13 @@ export const projects = [
     imgUrl: projImg3,
     icon: <FaReact />,
     icon2: <FaSass />,
+    category: "react",
   },
   {
     title: "Shope projet react",
     description: "Design & Development",
     imgUrl: projImg4,
     icon: <FaReact />,
+    category: "react",
   },
 ];

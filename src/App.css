@@ -1,16 +1,16 @@
-/* @font-face {
-  font-family: Centra;
-  src: url('./assets/font/CentraNo2-Bold.ttf');
+@font-face {
+  font-family: PTsans;
+  src: url('./assets/font/PT_Sans/PTSans-Bold.ttf');
   font-weight: 700;
 }
 @font-face {
-  font-family: Centra;
-  src: url('./assets/font/CentraNo2-Medium.ttf');
+  font-family: PTsans;
+  src: url('./assets/font/PT_Sans/PTSans-BoldItalic.ttf');
   font-weight: 500;
 }
 @font-face {
-  font-family: Centra;
-  src: url('./assets/font/CentraNo2-Book.ttf');
+  font-family: PTsans;
+  src: url('./assets/font/PT_Sans/PTSans-Regular.ttf');
   font-weight: 400;
 } 
 /************ Default Css ************/

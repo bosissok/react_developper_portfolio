@@ -2,7 +2,9 @@
 .project {
     padding: 80px 0;
     position: relative;
-    background-color: black;
+    /* background-color: black; */
+    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    padding: 60px 0 200px 0;
   }
   .project h2 {
     font-size: 45px;

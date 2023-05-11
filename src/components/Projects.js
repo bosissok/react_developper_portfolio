@@ -24,9 +24,50 @@ const Projects = () => {
     setOpenModals(newOpenModals);
   };
 
+  // const handleOpenModal = (index) => {
+  //   setOpenModals(openModals.map((val, i) => (i === index ? true : val)));
+  // };
+
+  // const handleCloseModal = (index) => {
+  //   setOpenModals(openModals.map((val, i) => (i === index ? false : val)));
+  // };
+
+  const getProjectsByCategory = (category) => {
+    let filteredProjects = projects;
+    if (category !== "All") {
+      filteredProjects = projects.filter(
+        (project) => project.category === category
+      );
+    }
+
+    // useEffect(() => {
+    //   getProjectsByCategory("All");
+    // }, []);
+
+    return filteredProjects.map((project, index) => (
+      <>
+        <ProjectsCard
+          open={() => handleOpenModal(index)}
+          key={project.id}
+          data={project}
+          index={index}
+        />
+
+        {openModals[index] && (
+          <Overlay close={() => handleCloseModal(index)}>
+            {<Modal data={project} close={() => handleCloseModal(index)} />}
+          </Overlay>
+        )}
+      </>
+    ));
+  };
+
+  const allProjects = getProjectsByCategory("All");
+  const reactProjects = getProjectsByCategory("react");
+  const nodeJsProjects = getProjectsByCategory("nodeJs");
+
   return (
     <section className="project" id="project">
-      <div></div>
       <Container>
         <Row>
           <Col size={12}>
@@ -46,20 +87,20 @@ const Projects = () => {
                     autonomie et à mener à bien des projets. J'espère que vous
                     prendrez plaisir à en découvrir davantage à leur sujet.
                   </p>
-                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                  <Tab.Container id="projects-tabs" defaultActiveKey="All">
                     <Nav
                       variant="pills"
                       className="nav-pills mb-5 justify-content-center align-items-center"
                       id="pills-tab"
                     >
                       <Nav.Item>
-                        <Nav.Link eventKey="first">React</Nav.Link>
+                        <Nav.Link eventKey="All">All</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="second">NodeJs</Nav.Link>
+                        <Nav.Link eventKey="react">React</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="third">Html & Css</Nav.Link>
+                        <Nav.Link eventKey="third">nodeJs</Nav.Link>
                       </Nav.Item>
                     </Nav>
                     <Tab.Content
@@ -68,45 +109,16 @@ const Projects = () => {
                         isVisible ? "animate__animated animate__slideInUp" : ""
                       }
                     >
-                      <Tab.Pane eventKey="first">
-                        <Row>
-                          {projects.map((project, index) => {
-                            return (
-                              <>
-                                <ProjectsCard
-                                  open={() => handleOpenModal(index)}
-                                  key={project.id}
-                                  data={project}
-                                  index={index}
-                                />
-                                {openModals[index] && (
-                                  <Overlay
-                                    close={() => handleCloseModal(index)}
-                                  >
-                                    {
-                                      <Modal
-                                        data={project}
-                                        close={() => handleCloseModal(index)}
-                                      />
-                                    }
-                                  </Overlay>
-                                )}
-                              </>
-                            );
-                          })}
-                        </Row>
+                      <Tab.Pane eventKey="All">
+                        <Row>{allProjects}</Row>
                       </Tab.Pane>
-                      <Tab.Pane eventKey="second">
-                        <p>Projets NodejS</p>
+                      <Tab.Pane eventKey="react">
+                        <p>Projets React</p>
+                        <Row>{reactProjects}</Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
-                        <p>
-                          Projet Html ET CSS Lorem ipsum dolor sit amet
-                          consectetur adipisicing elit. Cumque quam, quod neque
-                          provident velit, rem explicabo excepturi id illo
-                          molestiae blanditiis, eligendi dicta officiis
-                          asperiores delectus quasi inventore debitis quo.
-                        </p>
+                        <p>Projets nodeJs</p>
+                        <Row>{nodeJsProjects}</Row>
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
