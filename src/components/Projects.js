@@ -24,14 +24,6 @@ const Projects = () => {
     setOpenModals(newOpenModals);
   };
 
-  // const handleOpenModal = (index) => {
-  //   setOpenModals(openModals.map((val, i) => (i === index ? true : val)));
-  // };
-
-  // const handleCloseModal = (index) => {
-  //   setOpenModals(openModals.map((val, i) => (i === index ? false : val)));
-  // };
-
   const getProjectsByCategory = (category) => {
     let filteredProjects = projects;
     if (category !== "All") {
@@ -39,10 +31,6 @@ const Projects = () => {
         (project) => project.category === category
       );
     }
-
-    // useEffect(() => {
-    //   getProjectsByCategory("All");
-    // }, []);
 
     return filteredProjects.map((project, index) => (
       <>
@@ -71,7 +59,7 @@ const Projects = () => {
       <Container>
         <Row>
           <Col size={12}>
-            <TrackVisibility>
+            <TrackVisibility once>
               {({ isVisible }) => (
                 <div
                   className={

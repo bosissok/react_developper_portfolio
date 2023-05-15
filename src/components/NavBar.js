@@ -26,7 +26,6 @@ const NavBar = () => {
         </NavbarToggle>
         <Navbar.Collapse className="nav-pills" id="basic-navbar-nav">
           <Nav className="ms-auto">
-            {/* <Nav className="m-auto"> */}
             <NavLink
               to="/home"
               className={({ isActive }) =>
@@ -34,7 +33,6 @@ const NavBar = () => {
                   ? "active navbar-link nav-link"
                   : "navbar-link nav-link"
               }
-              // onClick={() => onUpdateActiveLink("home")}
             >
               Accueil
             </NavLink>
@@ -45,7 +43,6 @@ const NavBar = () => {
                   ? "active navbar-link nav-link"
                   : "navbar-link nav-link"
               }
-              // onClick={() => onUpdateActiveLink("skills")}
             >
               Compétences
             </NavLink>
@@ -56,7 +53,6 @@ const NavBar = () => {
                   ? "active navbar-link nav-link"
                   : "navbar-link nav-link"
               }
-              // onClick={() => onUpdateActiveLink("projects")}
             >
               Projets
             </NavLink>
@@ -68,7 +64,6 @@ const NavBar = () => {
                   ? "active navbar-link nav-link"
                   : "navbar-link nav-link"
               }
-              // onClick={() => onUpdateActiveLink("skills")}
             >
               Contact
             </NavLink>
